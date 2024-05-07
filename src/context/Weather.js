@@ -50,7 +50,7 @@ export const WeatherProvider = ({ children }) => {
     "Hatay",
     "Iğdır",
     "Isparta",
-    "İçel (Mersin)",
+    "Mersin",
     "İstanbul",
     "İzmir",
     "Kahramanmaraş",
