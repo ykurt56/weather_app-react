@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useWeather } from "../context/Weather";
 
 const WeatherDisplay = () => {
@@ -10,8 +10,13 @@ const WeatherDisplay = () => {
     getWeatherIconUrl,
   } = useWeather();
 
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "false" ? false : true
+  );
 
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
